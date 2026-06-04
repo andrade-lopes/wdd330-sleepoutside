@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "name": "Camping Tent",
+        "price": 120,
+        "image": "images/tent.jpg"
+    },
+    {
+        "id": "2",
+        "name": "Sleeping Bag",
+        "price": 60,
+        "image": "images/sleeping-bag.jpg"
+    },
+    {
+        "id": "3",
+        "name": "Camping Chair",
+        "price": 35,
+        "image": "images/chair.jpg"
+    }
+]
