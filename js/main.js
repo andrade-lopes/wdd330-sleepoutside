@@ -1,1 +1,1 @@
-console.log("PProject successfully initiated!");
+console.log("Project successfully initiated!");
