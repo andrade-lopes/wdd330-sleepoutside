@@ -1,3 +1,6 @@
+import { loadHeaderFooter } from "./utils.mjs";
+loadHeaderFooter();
+
 import { setLocalStorage } from "./utils.mjs";
 import ProductData from "./ProductData.mjs";
 

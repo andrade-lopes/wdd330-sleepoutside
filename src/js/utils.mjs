@@ -37,9 +37,7 @@ export function renderWithTemplate(
 
 export async function loadTemplate(path) {
   const response = await fetch(path);
-  const template = await response.text();
-
-  return template;
+  return await response.text();
 }
 
 export async function loadHeaderFooter() {
