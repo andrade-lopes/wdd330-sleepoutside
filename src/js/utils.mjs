@@ -41,6 +41,7 @@ export async function loadTemplate(path) {
 }
 
 export async function loadHeaderFooter() {
+  console.log("loadHeaderFooter está a rodar");
 
   const headerTemplate =
     await loadTemplate("/partials/header.html");
