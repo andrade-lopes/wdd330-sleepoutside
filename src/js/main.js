@@ -1,5 +1,5 @@
 import { loadHeaderFooter } from "./utils.mjs";
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
     loadHeaderFooter();
 });
