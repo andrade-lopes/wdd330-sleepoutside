@@ -66,3 +66,26 @@ export async function loadHeaderFooter() {
     footerElement
   );
 }
+
+export function alertMessage(message, scroll = true) {
+  const alert = document.createElement('div');
+  alert.classList.add('alert');
+
+  alert.innerHTML = `
+    <p>${message}</p>
+    <span class="close">X</span>
+  `;
+
+  alert.addEventListener('click', function (e) {
+    if (e.target.classList.contains('close')) {
+      this.remove();
+    }
+  });
+
+  const main = document.querySelector('main');
+  main.prepend(alert);
+
+  if (scroll) {
+    window.scrollTo(0, 0);
+  }
+}
