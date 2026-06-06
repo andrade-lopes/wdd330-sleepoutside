@@ -1,5 +1,5 @@
 import ExternalServices from './ExternalServices.mjs';
-import { alertMessage } from './utils.mjs';
+import { alertMessage, getLocalStorage, setLocalStorage } from './utils.mjs';
 
 export default class CheckoutProcess {
     constructor() {
@@ -8,23 +8,33 @@ export default class CheckoutProcess {
 
     async checkout() {
         try {
+            // 1. Get form
             const form = document.forms[0];
 
-            // build payload from form
+            // 2. Build payload
             const formData = Object.fromEntries(new FormData(form));
 
-            const result = await this.services.checkout(formData);
+            // 3. Add cart data to payload
+            const cart = getLocalStorage('so-cart') || [];
 
-            // SUCCESS
+            const payload = {
+                ...formData,
+                items: cart
+            };
+
+            // 4. Send to API
+            const response = await this.services.checkout(payload);
+
+            // 5. SUCCESS ACTIONS
             localStorage.removeItem('so-cart');
             window.location.href = './success.html';
 
         } catch (err) {
-            console.log(err);
+            console.log('Checkout error:', err);
 
             const message =
                 err?.message?.message ||
-                'Checkout failed. Please check your information and try again.';
+                'Something went wrong during checkout. Please try again.';
 
             alertMessage(message);
         }
