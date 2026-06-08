@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+#items {
+    list-style: none;
+    padding: 0;
+}
+
+#items li {
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+li[data-category="fruit"] {
+    background-color: lightyellow;
+}
+
+li[data-category="vegetable"] {
+    background-color: lightgreen;
+}
+
+li[data-category="dairy"] {
+    background-color: lightblue;
+}
+
+#details {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
